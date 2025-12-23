@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carta - Villa Magma's</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #6b2d1a;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.plato {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.plato-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.descripcion {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  font-size: 15px;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.descripcion.activo {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.precio {
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>CARTA</h1>
+<h2>PLATOS CLÁSICOS</h2>
+
+<div class="plato" onclick="toggle(this)">
+  <div class="plato-header">
+    <span>Cuy Entero Frito</span>
+    <span class="precio">S/. 60</span>
+  </div>
+  <div class="descripcion">
+    Cuy dorado acompañado con papas sancochadas, choclo y una deliciosa ensalada mixta bañada con exquisita vinagreta de casa.
+  </div>
+</div>
+
+<div class="plato" onclick="toggle(this)">
+  <div class="plato-header">
+    <span>Medio Cuy Frito</span>
+    <span class="precio">S/. 30</span>
+  </div>
+  <div class="descripcion">
+    1/2 cuy dorado acompañado con papas sancochadas, choclo y una deliciosa ensalada mixta bañada con exquisita vinagreta de casa.
+  </div>
+</div>
+
+<div class="plato" onclick="toggle(this)">
+  <div class="plato-header">
+    <span>Trucha Frita</span>
+    <span class="precio">S/. 20</span>
+  </div>
+  <div class="descripcion">
+    Trucha frita acompañada con papas sancochadas, choclo y una deliciosa ensalada mixta bañada con exquisita vinagreta de casa.
+  </div>
+</div>
+
+<div class="plato" onclick="toggle(this)">
+  <div class="plato-header">
+    <span>Chicharrón de Chancho</span>
+    <span class="precio">S/. 20</span>
+  </div>
+  <div class="descripcion">
+    Trozos de carne de chancho dorados acompañados con papas sancochadas, chuño, choclo y ensalada de cebolla roja, tomate y hierba buena.
+  </div>
+</div>
+
+<div class="plato" onclick="toggle(this)">
+  <div class="plato-header">
+    <span>Parrilla Mixta</span>
+    <span class="precio">S/. 30</span>
+  </div>
+  <div class="descripcion">
+    Pollo a la plancha con papa sancochada, anticucho, choclo, chorizo, ensalada con vinagreta y chuleta de chancho.
+  </div>
+</div>
+
+<div class="plato" onclick="toggle(this)">
+  <div class="plato-header">
+    <span>Pollo a la Parrilla</span>
+    <span class="precio">S/. 20</span>
+  </div>
+  <div class="descripcion">
+    Pechuga de pollo acompañada de papa sancochada y ensalada, cubierta con deliciosa vinagreta junto a chorizo.
+  </div>
+</div>
+
+<div class="plato" onclick="toggle(this)">
+  <div class="plato-header">
+    <span>Chuleta a la Parrilla</span>
+    <span class="precio">S/. 20</span>
+  </div>
+  <div class="descripcion">
+    Chuleta de chancho acompañada de papa sancochada y ensalada, cubierta con deliciosa vinagreta junto a chorizo.
+  </div>
+</div>
+
+</div>
+
+<script>
+function toggle(element) {
+  const desc = element.querySelector('.descripcion');
+  desc.classList.toggle('activo');
+}
+</script>
+
+</body>
+</html>
