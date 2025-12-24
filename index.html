@@ -1,147 +1,217 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carta - Villa Magma's</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carta - Magma's Recreo Campestre</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #6b2d1a;
-  color: #ffffff;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                  url("CARTA (1).jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
 
-.container {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-}
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
 
-h1, h2 {
-  text-align: center;
-  margin-bottom: 10px;
-}
+    h1 {
+      text-align: center;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+    }
 
-.plato {
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  padding: 15px 0;
-  cursor: pointer;
-}
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: normal;
+      border-bottom: 1px solid rgba(255,255,255,.5);
+      padding-bottom: 15px;
+    }
 
-.plato-header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  font-size: 18px;
-}
+    .menu-item {
+      background: rgba(0,0,0,.55);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      transition: all .3s ease;
+    }
 
-.descripcion {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  opacity: 0;
-  font-size: 15px;
-  margin-top: 10px;
-  line-height: 1.4;
-}
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      cursor: pointer;
+    }
 
-.descripcion.activo {
-  max-height: 200px;
-  opacity: 1;
-}
+    .menu-header:hover {
+      background: rgba(255,255,255,.08);
+    }
 
-.precio {
-  font-weight: bold;
-}
-</style>
+    .menu-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .menu-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease;
+      padding: 0 20px;
+    }
+
+    .menu-content p {
+      margin: 15px 0 20px;
+      line-height: 1.6;
+      color: #f0f0f0;
+    }
+
+    .menu-item.active .menu-content {
+      max-height: 300px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: .8;
+    }
+
+    @media (max-width: 600px) {
+      .menu-title {
+        font-size: 17px;
+      }
+      .price {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<div class="container">
 
-<h1>CARTA</h1>
-<h2>PLATOS CLÁSICOS</h2>
+  <div class="container">
+    <h1>CARTA</h1>
+    <h2>PLATOS CLÁSICOS</h2>
 
-<div class="plato" onclick="toggle(this)">
-  <div class="plato-header">
-    <span>Cuy Entero Frito</span>
-    <span class="precio">S/. 60</span>
-  </div>
-  <div class="descripcion">
-    Cuy dorado acompañado con papas sancochadas, choclo y una deliciosa ensalada mixta bañada con exquisita vinagreta de casa.
-  </div>
-</div>
+    <div class="menu-item">
+      <div class="menu-header">
+        <span class="menu-title">Cuy Entero Frito</span>
+        <span class="price">S/. 60</span>
+      </div>
+      <div class="menu-content">
+        <p>
+          Cuy dorado acompañado con papas sancochadas, choclo y una deliciosa
+          ensalada mixta bañada con exquisita vinagreta de casa.
+        </p>
+      </div>
+    </div>
 
-<div class="plato" onclick="toggle(this)">
-  <div class="plato-header">
-    <span>Medio Cuy Frito</span>
-    <span class="precio">S/. 30</span>
-  </div>
-  <div class="descripcion">
-    1/2 cuy dorado acompañado con papas sancochadas, choclo y una deliciosa ensalada mixta bañada con exquisita vinagreta de casa.
-  </div>
-</div>
+    <div class="menu-item">
+      <div class="menu-header">
+        <span class="menu-title">Medio Cuy Frito</span>
+        <span class="price">S/. 30</span>
+      </div>
+      <div class="menu-content">
+        <p>
+          1/2 cuy dorado acompañado con papas sancochadas, choclo y una deliciosa
+          ensalada mixta bañada con exquisita vinagreta de casa.
+        </p>
+      </div>
+    </div>
 
-<div class="plato" onclick="toggle(this)">
-  <div class="plato-header">
-    <span>Trucha Frita</span>
-    <span class="precio">S/. 20</span>
-  </div>
-  <div class="descripcion">
-    Trucha frita acompañada con papas sancochadas, choclo y una deliciosa ensalada mixta bañada con exquisita vinagreta de casa.
-  </div>
-</div>
+    <div class="menu-item">
+      <div class="menu-header">
+        <span class="menu-title">Trucha Frita</span>
+        <span class="price">S/. 20</span>
+      </div>
+      <div class="menu-content">
+        <p>
+          Trucha frita acompañada con papas sancochadas, choclo y una deliciosa
+          ensalada mixta bañada con exquisita vinagreta de casa.
+        </p>
+      </div>
+    </div>
 
-<div class="plato" onclick="toggle(this)">
-  <div class="plato-header">
-    <span>Chicharrón de Chancho</span>
-    <span class="precio">S/. 20</span>
-  </div>
-  <div class="descripcion">
-    Trozos de carne de chancho dorados acompañados con papas sancochadas, chuño, choclo y ensalada de cebolla roja, tomate y hierba buena.
-  </div>
-</div>
+    <div class="menu-item">
+      <div class="menu-header">
+        <span class="menu-title">Chicharrón de Chancho</span>
+        <span class="price">S/. 20</span>
+      </div>
+      <div class="menu-content">
+        <p>
+          Trozos de carne de chancho dorados acompañados con papas sancochadas,
+          chuño, choclo y una deliciosa ensalada de cebolla roja, tomate y
+          hierbabuena.
+        </p>
+      </div>
+    </div>
 
-<div class="plato" onclick="toggle(this)">
-  <div class="plato-header">
-    <span>Parrilla Mixta</span>
-    <span class="precio">S/. 30</span>
-  </div>
-  <div class="descripcion">
-    Pollo a la plancha con papa sancochada, anticucho, choclo, chorizo, ensalada con vinagreta y chuleta de chancho.
-  </div>
-</div>
+    <div class="menu-item">
+      <div class="menu-header">
+        <span class="menu-title">Parrilla Mixta</span>
+        <span class="price">S/. 30</span>
+      </div>
+      <div class="menu-content">
+        <p>
+          Pollo a la plancha con papa sancochada, anticucho, choclo, chorizo,
+          ensalada cubierta de su deliciosa vinagreta y chuleta de chancho.
+        </p>
+      </div>
+    </div>
 
-<div class="plato" onclick="toggle(this)">
-  <div class="plato-header">
-    <span>Pollo a la Parrilla</span>
-    <span class="precio">S/. 20</span>
-  </div>
-  <div class="descripcion">
-    Pechuga de pollo acompañada de papa sancochada y ensalada, cubierta con deliciosa vinagreta junto a chorizo.
-  </div>
-</div>
+    <div class="menu-item">
+      <div class="menu-header">
+        <span class="menu-title">Pollo a la Parrilla</span>
+        <span class="price">S/. 20</span>
+      </div>
+      <div class="menu-content">
+        <p>
+          Una pechuga de pollo acompañada de papa sancochada, ensalada cubierta
+          de una deliciosa vinagreta junto a chorizo.
+        </p>
+      </div>
+    </div>
 
-<div class="plato" onclick="toggle(this)">
-  <div class="plato-header">
-    <span>Chuleta a la Parrilla</span>
-    <span class="precio">S/. 20</span>
-  </div>
-  <div class="descripcion">
-    Chuleta de chancho acompañada de papa sancochada y ensalada, cubierta con deliciosa vinagreta junto a chorizo.
-  </div>
-</div>
+    <div class="menu-item">
+      <div class="menu-header">
+        <span class="menu-title">Chuleta a la Parrilla</span>
+        <span class="price">S/. 20</span>
+      </div>
+      <div class="menu-content">
+        <p>
+          Chuleta de chancho acompañada de papa sancochada, ensalada cubierta
+          de una deliciosa vinagreta junto a chorizo.
+        </p>
+      </div>
+    </div>
 
-</div>
+    <footer>
+      © Magma's Recreo Campestre
+    </footer>
+  </div>
 
-<script>
-function toggle(element) {
-  const desc = element.querySelector('.descripcion');
-  desc.classList.toggle('activo');
-}
-</script>
+  <script>
+    const items = document.querySelectorAll(".menu-header");
+
+    items.forEach(item => {
+      item.addEventListener("click", () => {
+        const parent = item.parentElement;
+        parent.classList.toggle("active");
+      });
+    });
+  </script>
 
 </body>
 </html>
